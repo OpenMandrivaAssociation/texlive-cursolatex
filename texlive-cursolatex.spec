@@ -1,3 +1,9 @@
+# revision 24139
+# category Package
+# catalog-ctan /info/portuguese/cursolatex
+# catalog-date 2011-09-29 10:37:15 +0200
+# catalog-license gpl
+# catalog-version undef
 Name:		texlive-cursolatex
 Version:	20110929
 Release:	1
@@ -38,6 +44,7 @@ The tutorial is presented as a set of slides (in Portuguese).
 %doc %{_texmfdistdir}/doc/latex/cursolatex/texstudio.pdf
 %doc %{_texmfdistdir}/doc/latex/cursolatex/tipografia.pdf
 %doc %{_texmfdistdir}/doc/latex/cursolatex/ubuntu.pdf
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -48,3 +55,5 @@ The tutorial is presented as a set of slides (in Portuguese).
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar doc %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
