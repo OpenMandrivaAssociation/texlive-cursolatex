@@ -16,8 +16,6 @@ Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/cursolatex.doc.ta
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
-Conflicts:	texlive-texmf <= 20110705-3
-Conflicts:	texlive-doc <= 20110705-3
 
 %description
 The tutorial is presented as a set of slides (in Portuguese).
@@ -44,7 +42,6 @@ The tutorial is presented as a set of slides (in Portuguese).
 %doc %{_texmfdistdir}/doc/latex/cursolatex/texstudio.pdf
 %doc %{_texmfdistdir}/doc/latex/cursolatex/tipografia.pdf
 %doc %{_texmfdistdir}/doc/latex/cursolatex/ubuntu.pdf
-%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -55,5 +52,3 @@ The tutorial is presented as a set of slides (in Portuguese).
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar doc %{buildroot}%{_texmfdistdir}
-mkdir -p %{buildroot}%{_tlpkgobjdir}
-cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
