@@ -6,7 +6,7 @@
 # catalog-version undef
 Name:		texlive-cursolatex
 Version:	20180303
-Release:	1
+Release:	2
 Summary:	A LaTeX tutorial
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/info/portuguese/cursolatex
