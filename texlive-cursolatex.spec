@@ -1,18 +1,12 @@
-# revision 24139
-# category Package
-# catalog-ctan /info/portuguese/cursolatex
-# catalog-date 2011-09-29 10:37:15 +0200
-# catalog-license gpl
-# catalog-version undef
 Name:		texlive-cursolatex
-Version:	20190228
+Version:	24139
 Release:	1
 Summary:	A LaTeX tutorial
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/info/portuguese/cursolatex
 License:	GPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/cursolatex.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/cursolatex.doc.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/cursolatex.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/cursolatex.doc.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -45,24 +39,10 @@ The tutorial is presented as a set of slides (in Portuguese).
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1
+%autosetup -p1 -c -a1
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar doc %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 20110929-2
-+ Revision: 750750
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 20110929-1
-+ Revision: 718187
-- texlive-cursolatex
-- texlive-cursolatex
-- texlive-cursolatex
-- texlive-cursolatex
-
