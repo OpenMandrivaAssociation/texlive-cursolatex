@@ -3,7 +3,7 @@ Version:	24139
 Release:	2
 Summary:	A LaTeX tutorial
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/info/portuguese/cursolatex
+URL:		https://www.ctan.org/tex-archive/info/portuguese/cursolatex
 License:	GPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/cursolatex.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/cursolatex.doc.r%{version}.tar.xz
