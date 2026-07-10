@@ -1,48 +1,21 @@
-Name:		texlive-cursolatex
-Version:	24139
-Release:	2
+%global tl_name cursolatex
+%global tl_revision 24139
+
+Name:		texlive-%{tl_name}
+Version:	%{tl_revision}
+Release:	1
 Summary:	A LaTeX tutorial
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/info/portuguese/cursolatex
-License:	GPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/cursolatex.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/cursolatex.doc.r%{version}.tar.xz
+License:	gpl
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/cursolatex.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/cursolatex.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
+%texlive_base_requires
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
 The tutorial is presented as a set of slides (in Portuguese).
 
-#-----------------------------------------------------------------------
-%files
-%doc %{_texmfdistdir}/doc/latex/cursolatex/MiKTeX-Basic.png
-%doc %{_texmfdistdir}/doc/latex/cursolatex/MiKTeX-Complete.png
-%doc %{_texmfdistdir}/doc/latex/cursolatex/Musica.pdf
-%doc %{_texmfdistdir}/doc/latex/cursolatex/README
-%doc %{_texmfdistdir}/doc/latex/cursolatex/TeXShopPNG.png
-%doc %{_texmfdistdir}/doc/latex/cursolatex/TeXworksPDF.pdf
-%doc %{_texmfdistdir}/doc/latex/cursolatex/WinEdt.pdf
-%doc %{_texmfdistdir}/doc/latex/cursolatex/cursolatex.nav
-%doc %{_texmfdistdir}/doc/latex/cursolatex/cursolatex.pdf
-%doc %{_texmfdistdir}/doc/latex/cursolatex/cursolatex.snm
-%doc %{_texmfdistdir}/doc/latex/cursolatex/cursolatex.tex
-%doc %{_texmfdistdir}/doc/latex/cursolatex/cursolatex.vrb
-%doc %{_texmfdistdir}/doc/latex/cursolatex/emacs.pdf
-%doc %{_texmfdistdir}/doc/latex/cursolatex/integral.pdf
-%doc %{_texmfdistdir}/doc/latex/cursolatex/tabuleiro.pdf
-%doc %{_texmfdistdir}/doc/latex/cursolatex/texmaker.pdf
-%doc %{_texmfdistdir}/doc/latex/cursolatex/texniccenter.pdf
-%doc %{_texmfdistdir}/doc/latex/cursolatex/texstudio.pdf
-%doc %{_texmfdistdir}/doc/latex/cursolatex/tipografia.pdf
-%doc %{_texmfdistdir}/doc/latex/cursolatex/ubuntu.pdf
-
-#-----------------------------------------------------------------------
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar doc %{buildroot}%{_texmfdistdir}
